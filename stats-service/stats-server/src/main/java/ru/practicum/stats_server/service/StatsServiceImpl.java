@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.practicum.stats_common.CommonUtils;
 import ru.practicum.stats_common.model.EndpointHit;
 import ru.practicum.stats_common.model.ViewStats;
-import ru.practicum.stats_server.mapper.StatsMapperImpl;
+import ru.practicum.stats_server.mapper.StatsMapper;
 import ru.practicum.stats_server.repository.StatsRepository;
 
 import java.time.LocalDateTime;
@@ -19,14 +19,14 @@ import java.util.List;
 @Slf4j
 public class StatsServiceImpl implements StatsService {
     private final StatsRepository statsRepository;
-    private final StatsMapperImpl statsMapperImpl;
+    private final StatsMapper statsMapper;
 
     @Override
     @Transactional
     public void addHit(EndpointHit endpointHit) {
         log.info("Регистрация обращения к {}", endpointHit);
 
-        statsRepository.save(statsMapperImpl.toStats(endpointHit,
+        statsRepository.save(statsMapper.toStats(endpointHit,
                 LocalDateTime.parse(endpointHit.getTimestamp(), CommonUtils.DT_FORMATTER)));
     }
 
