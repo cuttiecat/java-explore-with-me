@@ -35,7 +35,9 @@ public class StatsServiceImpl implements StatsService {
     public List<ViewStats> getStats(LocalDateTime start, LocalDateTime end, List<String> uris, Boolean unique) {
         log.info("Вывод списка обращений по параметрам start = {}, end = {}, uris = {}, unique = {}",
                 start, end, uris, unique);
-
+        if (start.isAfter(end)) {
+            throw new IllegalArgumentException("Недопустимый временной промежуток.");
+        }
         if (uris == null || uris.isEmpty()) {
             if (unique) {
                 return statsRepository.getAllStatsDistinctIp(start, end);
@@ -50,4 +52,6 @@ public class StatsServiceImpl implements StatsService {
             }
         }
     }
+
+
 }

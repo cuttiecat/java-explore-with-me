@@ -36,9 +36,6 @@ public class StatsController {
                                     @RequestParam @DateTimeFormat(pattern = CommonUtils.DT_FORMAT) LocalDateTime end,
                                     @RequestParam(required = false) List<String> uris,
                                     @RequestParam(required = false, defaultValue = "false") Boolean unique) {
-        if (start.isAfter(end)) {
-            throw new IllegalArgumentException("Недопустимый временной промежуток.");
-        }
         return statsService.getStats(start, end, uris, unique);
     }
 }
