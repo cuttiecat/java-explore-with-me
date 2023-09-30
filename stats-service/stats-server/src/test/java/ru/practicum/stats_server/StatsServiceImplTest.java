@@ -11,7 +11,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import ru.practicum.stats_common.CommonUtils;
 import ru.practicum.stats_common.model.EndpointHit;
 import ru.practicum.stats_common.model.ViewStats;
-import ru.practicum.stats_server.mapper.StatsMapperImpl;
+import ru.practicum.stats_server.mapper.StatsMapper;
 import ru.practicum.stats_server.model.Stats;
 import ru.practicum.stats_server.repository.StatsRepository;
 import ru.practicum.stats_server.service.StatsServiceImpl;
@@ -31,7 +31,7 @@ public class StatsServiceImplTest {
     private StatsRepository statsRepository;
 
     @Mock
-    private StatsMapperImpl statsMapper;
+    private StatsMapper statsMapper;
 
     @InjectMocks
     private StatsServiceImpl statsServiceImpl;
