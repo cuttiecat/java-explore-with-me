@@ -72,7 +72,7 @@ public class StatsServiceImplTest {
                             .app(endpointHit.getApp())
                             .uri(endpointHit.getUri())
                             .ip(endpointHit.getIp())
-                            .build);
+                            .build());
 
             statsServiceImpl.addHit(endpointHit);
 
