@@ -67,7 +67,12 @@ public class StatsServiceImplTest {
     class AddHit {
         @Test
         public void shouldAdd() {
-            when(statsMapper.toStats(any(), any())).thenCallRealMethod();
+                        when(statsMapper.toStats(any(), any()))
+                    .thenReturn(Stats.builder()
+                            .app(endpointHit.getApp())
+                            .uri(endpointHit.getUri())
+                            .ip(endpointHit.getIp())
+                            .build);
 
             statsServiceImpl.addHit(endpointHit);
 
