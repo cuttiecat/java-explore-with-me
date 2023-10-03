@@ -39,7 +39,7 @@ public class RequestServiceImpl implements RequestService {
 
     @Override
     public List<ParticipationRequestDto> getEventRequestsByRequester(Long userId) {
-        log.info("Вывод запросов на участие в чужих событиях пользователем с id {}", userId);
+        log.info("Вывод списка запросов на участие в чужих событиях пользователем с id {}", userId);
 
         userService.getUserById(userId);
 

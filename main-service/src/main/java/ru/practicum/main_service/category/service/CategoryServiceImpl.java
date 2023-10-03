@@ -26,14 +26,14 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     @Transactional
     public CategoryDto create(NewCategoryDto newCategoryDto) {
-        log.info("Добавление категории {}", newCategoryDto);
+        log.info("Добавление новой категории {}", newCategoryDto);
 
         return categoryMapper.toCategoryDto(categoryRepository.save(categoryMapper.newCategoryDtoToCategory(newCategoryDto)));
     }
 
     @Override
     public List<CategoryDto> getAll(Pageable pageable) {
-        log.info("Вывод категорий с пагинацией {}", pageable);
+        log.info("Вывод всех категорий с пагинацией {}", pageable);
 
         return categoryRepository.findAll(pageable).stream()
                 .map(categoryMapper::toCategoryDto)
@@ -45,7 +45,7 @@ public class CategoryServiceImpl implements CategoryService {
         log.info("Вывод категории с id {}", catId);
 
         Category category = categoryRepository.findById(catId)
-                .orElseThrow(() -> new NotFoundException("Категория с таким id не существует."));
+                .orElseThrow(() -> new NotFoundException("Категории с таким id не существует."));
 
         return categoryMapper.toCategoryDto(category);
     }
@@ -56,7 +56,7 @@ public class CategoryServiceImpl implements CategoryService {
         log.info("Обновление категории с id {} новыми параметрами {}", catId, categoryDto);
 
         categoryRepository.findById(catId)
-                .orElseThrow(() -> new NotFoundException("Категория с таким id не существует."));
+                .orElseThrow(() -> new NotFoundException("Категории с таким id не существует."));
 
         categoryDto.setId(catId);
         return categoryMapper.toCategoryDto(categoryRepository.save(categoryMapper.categoryDtoToCategory(categoryDto)));
@@ -68,7 +68,7 @@ public class CategoryServiceImpl implements CategoryService {
         log.info("Удаление категории с id {}", catId);
 
         categoryRepository.findById(catId)
-                .orElseThrow(() -> new NotFoundException("Категория с таким id не существует."));
+                .orElseThrow(() -> new NotFoundException("Категории с таким id не существует."));
 
         categoryRepository.deleteById(catId);
     }
@@ -78,6 +78,6 @@ public class CategoryServiceImpl implements CategoryService {
         log.info("Вывод категории с id {}", catId);
 
         return categoryRepository.findById(catId)
-                .orElseThrow(() -> new NotFoundException("Категория с таким id не существует."));
+                .orElseThrow(() -> new NotFoundException("Категории с таким id не существует."));
     }
 }

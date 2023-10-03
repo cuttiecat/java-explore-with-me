@@ -35,7 +35,7 @@ public class CompilationServiceImpl implements CompilationService {
     @Override
     @Transactional
     public CompilationDto create(NewCompilationDto newCompilationDto) {
-        log.info("Создание подборки событий с параметрами {}", newCompilationDto);
+        log.info("Создание новой подборки событий с параметрами {}", newCompilationDto);
 
         List<Event> events = new ArrayList<>();
 
@@ -52,7 +52,7 @@ public class CompilationServiceImpl implements CompilationService {
     @Override
     @Transactional
     public CompilationDto patch(Long compId, UpdateCompilationRequest updateCompilationRequest) {
-        log.info("Обновление событий с id {} и новыми параметрами {}", compId, updateCompilationRequest);
+        log.info("Обновление подборки событий с id {} и новыми параметрами {}", compId, updateCompilationRequest);
 
         Compilation compilation = getCompilationById(compId);
 
@@ -80,7 +80,7 @@ public class CompilationServiceImpl implements CompilationService {
     @Override
     @Transactional
     public void deleteById(Long compId) {
-        log.info("Удаление событий с id {}", compId);
+        log.info("Удаление подборки событий с id {}", compId);
 
         getCompilationById(compId);
 
@@ -89,7 +89,7 @@ public class CompilationServiceImpl implements CompilationService {
 
     @Override
     public List<CompilationDto> getAll(Boolean pinned, Pageable pageable) {
-        log.info("Вывод всех событий с параметрами pinned = {}, pageable = {}", pinned, pageable);
+        log.info("Вывод всех подборок событий с параметрами pinned = {}, pageable = {}", pinned, pageable);
 
         List<Compilation> compilations;
 
@@ -119,7 +119,7 @@ public class CompilationServiceImpl implements CompilationService {
 
     @Override
     public CompilationDto getById(Long compId) {
-        log.info("Вывод событий с id {}", compId);
+        log.info("Вывод подборки событий с id {}", compId);
 
         Compilation compilation = getCompilationById(compId);
 
