@@ -66,7 +66,7 @@ public class StatsServiceImplTest {
     class AddHit {
         @Test
         public void shouldAdd() {
-                        when(statsMapper.toStats(any(), any()))
+            when(statsMapper.toStats(any(), any()))
                     .thenReturn(Stats.builder()
                             .app(endpointHit.getApp())
                             .uri(endpointHit.getUri())
@@ -83,7 +83,7 @@ public class StatsServiceImplTest {
             assertEquals(endpointHit.getApp(), savedStats.getApp());
             assertEquals(endpointHit.getUri(), savedStats.getUri());
             assertEquals(endpointHit.getIp(), savedStats.getIp());
-            // assertEquals(LocalDateTime.parse(endpointHit.getTimestamp(), CommonUtils.DT_FORMATTER), savedStats.getTimestamp());
+
         }
     }
 
