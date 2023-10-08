@@ -31,7 +31,7 @@ public class EventFullDto {
 
     String description;
 
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     LocalDateTime eventDate;
 
     Long id;
