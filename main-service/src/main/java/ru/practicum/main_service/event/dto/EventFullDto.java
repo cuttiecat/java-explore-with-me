@@ -31,7 +31,7 @@ public class EventFullDto {
 
     String description;
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     LocalDateTime eventDate;
 
     Long id;
@@ -40,7 +40,7 @@ public class EventFullDto {
     Boolean paid;
     Integer participantLimit;
 
-    @JsonFormat(pattern = "HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     LocalDateTime publishedOn;
 
     Boolean requestModeration;
