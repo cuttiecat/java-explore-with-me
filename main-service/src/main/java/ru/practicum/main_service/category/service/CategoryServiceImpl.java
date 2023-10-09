@@ -10,7 +10,7 @@ import ru.practicum.main_service.category.dto.NewCategoryDto;
 import ru.practicum.main_service.category.mapper.CategoryMapper;
 import ru.practicum.main_service.category.model.Category;
 import ru.practicum.main_service.category.repository.CategoryRepository;
-import ru.practicum.main_service.exceptions.NotFoundException;
+import ru.practicum.main_service.exception.NotFoundException;
 
 import java.util.List;
 import java.util.stream.Collectors;

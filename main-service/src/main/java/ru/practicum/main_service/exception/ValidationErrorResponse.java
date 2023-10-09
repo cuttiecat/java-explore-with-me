@@ -1,4 +1,4 @@
-package ru.practicum.main_service.exceptions;
+package ru.practicum.main_service.exception;
 
 import java.util.List;
 
