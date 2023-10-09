@@ -14,7 +14,7 @@ import ru.practicum.main_service.compilation.repository.CompilationRepository;
 import ru.practicum.main_service.event.dto.EventShortDto;
 import ru.practicum.main_service.event.model.Event;
 import ru.practicum.main_service.event.service.EventService;
-import ru.practicum.main_service.exception.NotFoundException;
+import ru.practicum.main_service.exceptions.NotFoundException;
 
 import java.util.*;
 

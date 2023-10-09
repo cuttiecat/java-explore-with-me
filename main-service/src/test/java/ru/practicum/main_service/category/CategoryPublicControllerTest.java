@@ -93,7 +93,7 @@ public class CategoryPublicControllerTest {
                             .characterEncoding(StandardCharsets.UTF_8)
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isInternalServerError());
+                    .andExpect(status().isBadRequest());
 
             verify(categoryService, never()).getAll(ArgumentMatchers.any());
         }
@@ -104,7 +104,7 @@ public class CategoryPublicControllerTest {
                             .characterEncoding(StandardCharsets.UTF_8)
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isInternalServerError());
+                    .andExpect(status().isBadRequest());
 
             verify(categoryService, never()).getAll(ArgumentMatchers.any());
         }
@@ -115,7 +115,7 @@ public class CategoryPublicControllerTest {
                             .characterEncoding(StandardCharsets.UTF_8)
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isInternalServerError());
+                    .andExpect(status().isBadRequest());
 
             verify(categoryService, never()).getAll(ArgumentMatchers.any());
         }

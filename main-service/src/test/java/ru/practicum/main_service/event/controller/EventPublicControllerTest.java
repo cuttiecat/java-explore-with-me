@@ -92,7 +92,7 @@ public class EventPublicControllerTest {
                             .characterEncoding(StandardCharsets.UTF_8)
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isInternalServerError());
+                    .andExpect(status().isBadRequest());
 
             verify(eventService, never())
                     .getEventsByPublic(any(), any(), any(), any(), any(), any(), any(), any(), any(), any());
@@ -104,7 +104,7 @@ public class EventPublicControllerTest {
                             .characterEncoding(StandardCharsets.UTF_8)
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isInternalServerError());
+                    .andExpect(status().isBadRequest());
 
             verify(eventService, never())
                     .getEventsByPublic(any(), any(), any(), any(), any(), any(), any(), any(), any(), any());
@@ -116,7 +116,7 @@ public class EventPublicControllerTest {
                             .characterEncoding(StandardCharsets.UTF_8)
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isInternalServerError());
+                    .andExpect(status().isBadRequest());
 
             verify(eventService, never())
                     .getEventsByPublic(any(), any(), any(), any(), any(), any(), any(), any(), any(), any());
@@ -128,7 +128,7 @@ public class EventPublicControllerTest {
                             .characterEncoding(StandardCharsets.UTF_8)
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isInternalServerError());
+                    .andExpect(status().isBadRequest());
 
             verify(eventService, never())
                     .getEventsByPublic(any(), any(), any(), any(), any(), any(), any(), any(), any(), any());
@@ -140,7 +140,7 @@ public class EventPublicControllerTest {
                             .characterEncoding(StandardCharsets.UTF_8)
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isInternalServerError());
+                    .andExpect(status().isBadRequest());
 
             verify(eventService, never())
                     .getEventsByPublic(any(), any(), any(), any(), any(), any(), any(), any(), any(), any());
