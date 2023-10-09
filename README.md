@@ -1,2 +1,18 @@
 # java-explore-with-me
-Template repository for ExploreWithMe project.
+Ссылочка на pull request: https://github.com/cuttiecat/java-explore-with-me/pull/6
+
+Приложение предоставляет сервис для cоздания и планирования событий, поиска компании для участия в них.
+
+Приложение состоит из четырех микросервисов - основной сервис, основная БД, сервис статистики просмотров, база данных для статистики. 
+Каждый микросервис поднимается в отдельном docker-контейнере.
+
+# API основного сервиса разделена на три части:
+- **публичная** доступна без регистрации любому пользователю сети;
+- **закрытая** доступна только авторизованным пользователям;
+- **административная** — для администраторов сервиса.
+
+# Технологический стек
+Java 11, Maven, Spring-Boot, Hibernate, Postgresql, Lombok, MapStruct, Docker.
+
+# Схема базы данных основного сервиса
+# ![Data_base_schema](https://github.com/cuttiecat/java-explore-with-me/blob/feature_comments/db.png)
