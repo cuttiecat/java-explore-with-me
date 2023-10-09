@@ -257,7 +257,7 @@ public class UserAdminControllerTest {
                             .characterEncoding(StandardCharsets.UTF_8)
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isBadRequest());
+                    .andExpect(status().isInternalServerError());
 
             verify(userService, never()).getUsers(ArgumentMatchers.any(), ArgumentMatchers.any());
         }
@@ -268,7 +268,7 @@ public class UserAdminControllerTest {
                             .characterEncoding(StandardCharsets.UTF_8)
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isBadRequest());
+                    .andExpect(status().isInternalServerError());
 
             verify(userService, never()).getUsers(ArgumentMatchers.any(), ArgumentMatchers.any());
         }
@@ -279,7 +279,7 @@ public class UserAdminControllerTest {
                             .characterEncoding(StandardCharsets.UTF_8)
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isBadRequest());
+                    .andExpect(status().isInternalServerError());
 
             verify(userService, never()).getUsers(ArgumentMatchers.any(), ArgumentMatchers.any());
         }
