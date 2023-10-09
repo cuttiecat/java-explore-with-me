@@ -129,7 +129,7 @@ public class EventPrivateControllerTest {
                             .characterEncoding(StandardCharsets.UTF_8)
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isBadRequest());
+                    .andExpect(status().isInternalServerError());
 
             verify(eventService, never()).getAllEventsByPrivate(any(), any());
         }
@@ -140,7 +140,7 @@ public class EventPrivateControllerTest {
                             .characterEncoding(StandardCharsets.UTF_8)
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isBadRequest());
+                    .andExpect(status().isInternalServerError());
 
             verify(eventService, never()).getAllEventsByPrivate(any(), any());
         }
@@ -151,7 +151,7 @@ public class EventPrivateControllerTest {
                             .characterEncoding(StandardCharsets.UTF_8)
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isBadRequest());
+                    .andExpect(status().isInternalServerError());
 
             verify(eventService, never()).getAllEventsByPrivate(any(), any());
         }

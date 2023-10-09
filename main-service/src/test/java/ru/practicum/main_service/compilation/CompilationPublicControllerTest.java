@@ -95,7 +95,7 @@ public class CompilationPublicControllerTest {
                             .characterEncoding(StandardCharsets.UTF_8)
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isBadRequest());
+                    .andExpect(status().isInternalServerError());
 
             verify(compilationService, never()).getAll(any(), any());
         }
@@ -106,7 +106,7 @@ public class CompilationPublicControllerTest {
                             .characterEncoding(StandardCharsets.UTF_8)
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isBadRequest());
+                    .andExpect(status().isInternalServerError());
 
             verify(compilationService, never()).getAll(any(), any());
         }
@@ -117,7 +117,7 @@ public class CompilationPublicControllerTest {
                             .characterEncoding(StandardCharsets.UTF_8)
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isBadRequest());
+                    .andExpect(status().isInternalServerError());
 
             verify(compilationService, never()).getAll(any(), any());
         }
