@@ -16,7 +16,12 @@ import ru.practicum.main_service.event.model.Event;
 import ru.practicum.main_service.event.service.EventService;
 import ru.practicum.main_service.exception.NotFoundException;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
