@@ -14,14 +14,9 @@ import ru.practicum.main_service.compilation.repository.CompilationRepository;
 import ru.practicum.main_service.event.dto.EventShortDto;
 import ru.practicum.main_service.event.model.Event;
 import ru.practicum.main_service.event.service.EventService;
-import ru.practicum.main_service.exception.NotFoundException;
+import ru.practicum.main_service.exceptions.NotFoundException;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor

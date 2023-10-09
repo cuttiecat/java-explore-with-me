@@ -14,8 +14,8 @@ import ru.practicum.main_service.event.mapper.RequestMapper;
 import ru.practicum.main_service.event.model.Event;
 import ru.practicum.main_service.event.model.Request;
 import ru.practicum.main_service.event.repository.RequestRepository;
-import ru.practicum.main_service.exception.ForbiddenException;
-import ru.practicum.main_service.exception.NotFoundException;
+import ru.practicum.main_service.exceptions.ForbiddenException;
+import ru.practicum.main_service.exceptions.NotFoundException;
 import ru.practicum.main_service.user.model.User;
 import ru.practicum.main_service.user.service.UserService;
 
