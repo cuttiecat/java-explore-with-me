@@ -20,14 +20,12 @@ public class AdminCommentController {
 
     @GetMapping("/{commentId}")
     public CommentDto getCommentById(@PathVariable Long commentId) {
-        log.info("Получен запрос GET на получение комментария по id.");
         return commentService.getCommentById(commentId);
     }
 
     @DeleteMapping("/{commentId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCommentById(@PathVariable Long commentId) {
-        log.info("Получен запрос DELETE на удаление комментария по id администратором.");
         commentService.deleteCommentById(commentId);
     }
 

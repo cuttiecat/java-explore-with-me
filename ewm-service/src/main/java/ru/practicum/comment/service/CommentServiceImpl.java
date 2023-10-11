@@ -35,6 +35,8 @@ public class CommentServiceImpl implements CommentService {
     @Transactional
     @Override
     public CommentDto addComment(Long userId, Long eventId, NewCommentDto newCommentDto) {
+        log.info("Добавление нового комментария, userId = {}, eventId = {}, ", userId,eventId);
+        log.debug("newCommentDto = {}", newCommentDto);
         User user = userService.checkUserExistAndGet(userId);
         Event event = eventService.getEventById(eventId);
         Comment comment = new Comment();
@@ -42,7 +44,9 @@ public class CommentServiceImpl implements CommentService {
         comment.setEvent(event);
         comment.setCommentator(user);
         comment.setPublishedOn(LocalDateTime.now());
-        return commentMapper.toCommentDto(commentRepository.save(comment));
+        var result = commentMapper.toCommentDto(commentRepository.save(comment));
+        log.info("Новый комментарий добавлен, id = {}, userId = {}, eventId = {}", result.getId(), userId, eventId);
+        return result;
     }
 
     @Transactional
@@ -63,22 +67,30 @@ public class CommentServiceImpl implements CommentService {
     @Transactional
     @Override
     public List<CommentDto> getCommentsByEventId(Long eventId, Integer from, Integer size) {
+        log.info("Получен GET-запрос на получение всех комментариев для события с id = {}", eventId);
+        log.debug("eventId = {}", eventId);
         eventService.getEventById(eventId);
         Pageable page = PageRequest.of(from / size, size);
         List<Comment> eventComments = commentRepository.findAllByEventId(eventId, page);
+        log.info("GET-запрос на получение всех комментариев для события с id = {} успешно выполнен. from = {}, size = {}.", eventId, from, size);
         return commentMapper.toCommentDtoList(eventComments);
     }
 
     @Transactional
     @Override
     public CommentDto getCommentById(Long commentId) {
+        log.info("Получение комментария по id: {}", commentId);
+        log.debug("commentId = {}", commentId);
         Comment comment = checkCommentExistAndGet(commentId);
+        log.info("Получение комментария по id успешно выполнено. 'commentId = {}'", commentId);
         return commentMapper.toCommentDto(comment);
     }
 
     @Transactional
     @Override
     public void deleteCommentById(Long commentId) {
+        log.info("Получен запрос DELETE на удаление комментария по id = {} администратором.", commentId);
+        log.debug("сommentId = {}", commentId);
         Comment comment = checkCommentExistAndGet(commentId);
         commentRepository.delete(comment);
         log.info("Комментарий с id = {} успешно удалён администратором.", commentId);

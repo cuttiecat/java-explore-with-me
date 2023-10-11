@@ -24,7 +24,6 @@ public class PublicCommentController {
     public List<CommentDto> getCommentsByEventId(@PathVariable Long eventId,
                                                  @PositiveOrZero @RequestParam(value = "from", defaultValue = "0") Integer from,
                                                  @Positive @RequestParam(value = "size", defaultValue = "10") Integer size) {
-        log.info("Получен GET-запрос на получение всех комментариев для события с id.", eventId);
         return commentService.getCommentsByEventId(eventId, from, size);
     }
 
